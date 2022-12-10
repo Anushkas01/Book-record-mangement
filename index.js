@@ -1,16 +1,24 @@
-const http = require("http");
+const express = require("express");
 
-const port = 8081;
+const app = express(); 
 
-http
- .createServer((request, response) => {
-    response.writeHead(200, { "Content-Type": "text.html" });
-    response.write("<h1>Hello, Anushka's server</h1>");
-    response.end(); 
+const PORT = 8082;
 
-})
-.listen(port, () => {
-    console.log('Nodejs server started on port ${port}');
+app.use(express.json());
+
+app.get('/', (req, res) => {
+    res.status(200).json({
+        message: "Server is up and running",
+    });
+});
+app.get("*", (req, res) => {
+    res.status(200).json({
+        message: "This route does not exist",
+    });
+});
+
+app.listen(PORT, () => {
+    console.log('Server is running on port ${PORT}');
 });
 
 //http://localhost:8081
