@@ -2,6 +2,10 @@
 
 This is a book record mangment api backend for the managment of records and books.
 
+# Api Documentation link
+
+https://documenter.getpostman.com/view/24865416/2s8YzTTN8S
+
 # Routes and Endpoints
 
 ## /users
